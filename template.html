@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope</title>
+    <style>
+        :root {
+            background-color: #eee;
+            overflow: hidden;
+        }
+
+        * {
+            transition: all .1s ease-in-out;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+            /* border: 2px solid red; */
+
+        }
+
+        .left {
+            width: 25vw;
+        }
+
+        div {
+            margin: 10px;
+            /* border: 2px solid blue; */
+        }
+
+        .pie {
+            border-radius: 100%;
+            width: 50vh;
+            height: 50vh;
+
+            &:hover {
+
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        .horizonalpie {
+            width: 100%;
+            height: 1vh;
+            border: 2px solid #ddd;
+
+            &:hover {
+
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        .lang-name {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            &:hover {
+
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .progress {
+            width: 100%;
+            height: 1vh;
+            border: 2px solid #ddd;
+
+            &:hover {
+
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="lang">
+                <!--LANG_INSERT-->
+            </div>
+            <div class="horizonalpie" style="    
+                  background:linear-gradient(to right,{{LINEAR_PIE}});
+                  ">
+
+            </div>
+
+            {{PROGRESS_START}}
+            <div class="progress" style="    
+                  background:linear-gradient(to right,{{PROGRESS}});
+                  ">
+
+
+            </div>
+            {{PROGRESS_END}}
+        </div>
+        <div class="right">
+            <div class="pie" style=" 
+                background:conic-gradient({{CONIC_PIE}});
+                ">
+
+            </div>
+        </div>
+
+    </div>
+</body>
+<script>
+    {{SCRIPT_INSERT}}
+</script>
+
+</html>
